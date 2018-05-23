@@ -1,0 +1,17 @@
+<main>
+    <section class="article">
+        <div class="wrapper">
+            <div class="header">
+                <h3><?=$blog->getTitle()?></h3>
+                <!--<h3 class="light">Description</h3>-->
+                <time class="bold"><?=$blog->getDate()?></time>
+            </div>
+            <div class="post">
+                <a href="/index.php?controller=default&action=blog" class="bold">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i> GO BACK TO THE BLOG
+                </a>
+                <p><?=$blog->getText()?></p>
+            </div>
+        </div>
+    </section>
+</main>

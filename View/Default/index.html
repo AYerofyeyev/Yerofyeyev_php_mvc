@@ -1,0 +1,67 @@
+<main>
+    <section class="lowlark">
+        <div class="wrapper">
+            <div class="column">
+                <img src="./img/Home-LL.png" alt="LL-comouter">
+            </div>
+            <div class="column">
+                <h1>LOWLARK</h1>
+                <h5>Web Design Company.</h5>
+                <p><strong>We make projects quick, <br/>efficiently and beautiful.</strong></p>
+                <a href="../../webroot/index.php?controller=default&action=latestWorks"><button class="button-purple">PORTFOLIO</button></a>
+                <a href="../../webroot/index.php?controller=default&action=aboutUs"><button class="button-white">ABOUT US</button></a>
+            </div>
+        </div>
+    </section>
+    <section class="old-new">
+        <div class="wrapper">
+            <h3 class="bold font60">turning <span class="font90">old</span> <span class="gloria">design</span></h3>
+            <h1 class="font100">into</h1>
+            <h3 class="bold font60"><span class="font90">new</span> <span class="gloria">ones</span></h3>
+            <img src="./img/Home-Old.png" alt="Old">
+        </div>
+    </section>
+    <section class="desires">
+        <div class="wrapper">
+            <p class="font48 bold">listen <span class="font72">carefully</span> to you</p>
+            <div class="desires__shift_left">
+                <p class="font48 bold">&</p>
+                <p class="font48 bold"><span class="font72">understand</span> your <span class="gloria">desires</span></p>
+            </div>
+            <div class="desires__photo">
+                <img src="./img/Home-Desires.png" alt="your-desires">
+            </div>
+        </div>
+    </section>
+    <section class="style">
+        <div class="wrapper">
+            <p class="font60 bold">we <span class="font90">know</span></p>
+            <p class="font60 bold"><span class="font90">what</span> is <span class="gloria">style</span></p>
+            <img src="./img/Home-Style.png" alt="style">
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="wrapper">
+        <object type="image/svg+xml" data="./img/logo_ll_darck.svg">
+<!--     <img src="SvgImg.png" width="200" height="200" alt="image format png" /> -->
+        </object>
+        <a name="contact"></a>
+        <form method="POST">
+            <h4 class="bold">CONTACT US</h4>
+            <?=$hint?>
+            <div class="name-email">
+                <input type="text" id="name" name="name" placeholder="Name" value="<?=$form->name?>">
+                <input type="email" id="email" name="email" placeholder="E-mail" value="<?=$form->email?>">
+            </div>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" value="<?=$form->phone?>">
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Message"><?=$form->message?></textarea>
+            <button type="submit" class="button-footer">SUBMIT</button>
+        </form>
+        <div>
+            <a href="../../webroot/index.php">Privacy Policy</a>
+            <a href="../../webroot/index.php?controller=default&action=login">Log In</a>
+        </div>
+    </div>
+</footer>
+<div id="newsblock"></div>

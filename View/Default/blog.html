@@ -1,0 +1,50 @@
+<main>
+    <section class="blog">
+        <div class="wrapper">
+            <h1>BLOG</h1>
+            <div class="content">
+                <?php foreach($blogs as $blog) : ?>
+                <?php $blockStyle = ($blockStyle === 'line') ? 'line right' : 'line'?>
+                <?php $arrowSide = ($arrowSide === 'fa-caret-left left') ? 'fa-caret-right right' : 'fa-caret-left left'?>
+                <a href="../../webroot/index.php?controller=blog&action=index&id=<?=$blog->getId()?>">
+                    <div class="<?=$blockStyle?>">
+                        <div class="pic">
+                            <img src="../img/blog/<?=$blog->getImage()?>" alt="Article image">
+                            <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+                                <source src="<?=$blog->getVideo()?>" type="video/webm">
+                            </video>
+                        </div>
+                        <div class="blog__title">
+                            <h3 class="light"><?=$blog->getTitle()?></h3>
+                            <time class="bold"><?=$blog->getDate()?></time>
+                            <i class="fa <?=$arrowSide?>" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="wrapper">
+        <object type="image/svg+xml" data="./img/logo_ll_darck.svg">
+<!--     <img src="SvgImg.png" width="200" height="200" alt="image format png" /> -->
+        </object>
+        <form method="POST">
+            <h4 class="bold">CONTACT US</h4>
+            <?=$hint?>
+            <div class="name-email">
+                <input type="text" id="name" name="name" placeholder="Name" value="<?=$form->name?>">
+                <input type="email" id="email" name="email" placeholder="E-mail" value="<?=$form->email?>">
+            </div>
+            <input type="tel" id="phone" name="phone" placeholder="Phone" value="<?=$form->phone?>">
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Message"><?=$form->message?></textarea>
+            <button class="button-footer">SUBMIT</button>
+        </form>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="../../webroot/index.php?controller=default&action=login">Log In</a>
+        </div>
+    </div>
+</footer>

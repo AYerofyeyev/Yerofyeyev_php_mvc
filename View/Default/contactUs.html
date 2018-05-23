@@ -1,0 +1,69 @@
+<main>
+    <section class="contact_us">
+        <div class="wrapper">
+            <h1>CONTACT US</h1>
+            <?=$hint?>
+            <form method="POST">
+                <div class="block">
+                    <div class="fields">
+                        <div class="name-email">
+                            <input type="text" id="name" name="name" placeholder="Name" value="<?=$form->name?>">
+                            <input type="email" id="email" name="email" placeholder="E-mail" value="<?=$form->email?>">
+                        </div>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" value="<?=$form->phone?>">
+                        <textarea id="message" name="message" cols="30" rows="10" placeholder="Message"><?=$form->message?></textarea>
+                    </div>
+                    <div class="radio">
+                        <p class="bold">I need help with:</p>
+                        <div class="radio_element">
+                            <input type="radio" id="contactChoice1"
+                                   name="options" value="landing">
+                            <label for="contactChoice1">Landing page</label>
+                        </div>
+
+                        <div class="radio_element">
+                            <input type="radio" id="contactChoice2"
+                                   name="options" value="info">
+                            <label for="contactChoice2">Info portal</label>
+                        </div>
+
+                        <div class="radio_element">
+                            <input type="radio" id="contactChoice3"
+                                   name="options" value="corporative">
+                            <label for="contactChoice3"> Corporative
+                                web-site</label>
+                        </div>
+
+                        <div class="radio_element">
+                            <input type="radio" id="contactChoice4"
+                                   name="options" value="custom">
+                            <label for="contactChoice4">Mobile version</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="button-purple">Submit</button>
+            </form>
+            <h3>Still have any questions ?</h3>
+                <h3>Write me!</h3>
+                    <div class="support">
+                        <div class="pic">photo</div>
+                        <div class="contacts">
+                            <h5>Hi, I'm Xxxx!</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi magni placeat provident debitis ipsam dolorum neque earum fugit at ipsa tempore blanditiis, voluptatum ducimus aspernatur optio incidunt, aperiam recusandae voluptate.</p>
+                            <p class="bold">You can find me:</p>
+                            <div class="links">
+                                <div class="column">
+                                    <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i> @twitter_name</a>
+                                    <a href="#"><i class="fa fa-skype" aria-hidden="true"></i> ll_skype_acount</a>
+                                    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i> facebook_account</a>
+                                </div>
+                                <div class="column">
+                                    <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> email@mail.com</a>
+                                    <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +111111111</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,95 @@
+	<main>
+		<section class="admin">
+			<video loop muted autoplay poster="./img/videoframe.jpg" class="video_sashc0">
+				<source src="./videos/giphy.mp4" type="video/webm">
+			</video>
+			<div class="wrapper">
+				<h1>ADMIN PANEL</h1>
+				<nav>
+					<ul>
+						<li>
+							<a href="/index.php?controller=admin&action=addUser">Add admin</a>
+						</li>
+						<li>
+							<a>Remove admin</a>
+						</li>
+						<li>
+							<a>ADD BLOG ARTICLE
+							</a>
+						</li>
+						<li>
+							<a>ADD PROJECT</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="new_admin">
+					<form method="POST">
+						<h3>Add admin</h3>
+						<input type="text" id="add_admin" name="addLogin" placeholder="login">
+						<input type="password" id="add_pass" name="addPassword" placeholder="password">
+						<button class="button-purple">Add</button>
+					</form>
+					<form method="POST">
+						<h3>Remove admin</h3>
+						<input type="text" id="kill_admin" name="killAdmin" placeholder="login">
+						<button class="button-purple">Remove</button>
+					</form>
+				</div>
+				<div class="feedback">
+					<h3>User list</h3>
+					<?php foreach($users as $user) : ?>
+					<div class="box">
+						<p>
+							<span><?=$user->getLogin()?></span>
+							<span><?=$user->getPassword()?></span>
+							<span><?=($user->getActive())?'active':'deactivated'?></span>
+						</p>
+					</div>
+					<?php endforeach; ?>
+				</div>
+				<div class="new_blog">
+					<form method="POST">
+						<h3>ADD BLOG ARTICLE</h3>
+						<input type="text" id="title" name="blogTitle" placeholder="Title">
+						<textarea id="new-article" name="blogText" cols="30" rows="10" placeholder="Article"></textarea>
+						<label for="blog_image">Choose image to upload</label>
+						<input type="file" name="blogImage" id="blog_image" accept="image/*" class="button-purple"/>
+						<div class="video-url">
+							<label for="blog_video">Choose video to upload</label>
+							<input type="file" name="blogVideo" id="blog_video" accept="video/*" class="button-purple"/>
+							<label for="blog_video_url">Or add video URL</label>
+							<input type="text" name="blogVideoUrl" id="blog_video_url" placeholder="Video URL" />
+						</div>
+						<button class="button-purple">Add</button>
+					</form>
+				</div>
+				<div class="new_project">
+					<form method="POST">
+						<h3>ADD PROJECT</h3>
+						<input type="text" id="project_title" name="projectTitle" placeholder="Name">
+						<input type="text" id="project_link" name="projectLink" placeholder="URL">
+						<input type="text" id="project_description" name="projectDescription" placeholder="Description">
+						<input type="file" id="project_image" name="projectImage" accept="image/*" class="button-purple"/>
+						<button class="button-purple">Add</button>
+					</form>
+				</div>
+				<div class="feedback">
+					<h3>Feedback</h3>
+					<?php foreach($feedbacks as $feedback) : ?>
+					<div class="box">
+						<p>
+							<span>Date - </span><?=$feedback->getDate()?><br>
+							<span>Name - </span><?=$feedback->getName()?><br>
+							<span>IP Address - </span><?=$feedback->getIp()?><br>
+							<span>Email - </span><?=$feedback->getEmail()?><br>
+							<span>Phone - </span><?=$feedback->getPhone()?><br>
+							<span>Subject - </span><?=$feedback->getOptions()?><br>
+							<span>Message:</span> <br>
+							<?=$feedback->getMessage()?>
+						</p>
+					</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+	</main>
